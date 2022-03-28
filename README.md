@@ -7,7 +7,7 @@ Installers for as VST3, AAX and AU available soon at [austrian.audio](https://au
 Give it a listen [here](https://austrian.audio/austrian-audio-ambicreator/)!  
 You can find technical details in an [AES e-Brief](http://www.aes.org/e-lib/browse.cfm?elib=20827).
 
-<img width="762" alt="AmbiCreator Screenshot" src="https://user-images.githubusercontent.com/18114953/83126715-86e93800-a0d9-11ea-854b-a5e3ed8d04b0.png">
+<img width="762" alt="AmbiCreator Screenshot" src="">
 
 ## Building AmbiCreator
 AmbiCreator is based on [JUCE](https://juce.com/). To build AmbiCreator, get a recent version of JUCE and open AmbiCreator.jucer in Projucer. Select an exporter of your choice (e.g. Visual Studio or XCode) to create and open a project file in your IDE.
