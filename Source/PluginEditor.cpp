@@ -6,7 +6,7 @@
 AmbiCreatorAudioProcessorEditor::AmbiCreatorAudioProcessorEditor (AmbiCreatorAudioProcessor& p, AudioProcessorValueTreeState& vts)
     : AudioProcessorEditor (&p), processor (p), valueTreeState(vts)
 {
-    setResizable (true, true);
+    setResizable (false, false);
     fixedAspectRatioConstrainer.setFixedAspectRatio (double(processor.EDITOR_DEFAULT_WIDTH) / processor.EDITOR_DEFAULT_HEIGHT);
     fixedAspectRatioConstrainer.setSizeLimits (processor.EDITOR_DEFAULT_WIDTH, processor.EDITOR_DEFAULT_HEIGHT, 2 * processor.EDITOR_DEFAULT_WIDTH, 2 * processor.EDITOR_DEFAULT_HEIGHT);
     setConstrainer (&fixedAspectRatioConstrainer);
@@ -14,7 +14,7 @@ AmbiCreatorAudioProcessorEditor::AmbiCreatorAudioProcessorEditor (AmbiCreatorAud
     
     setLookAndFeel (&globalLaF);
     
-    addAndMakeVisible (&title);
+    //addAndMakeVisible (&title);
     title.setTitle (String("AustrianAudio"),String("AmbiCreator"));
     title.setFont (globalLaF.aaMedium,globalLaF.aaRegular);
     title.showAlertSymbol(false);
@@ -26,7 +26,7 @@ AmbiCreatorAudioProcessorEditor::AmbiCreatorAudioProcessorEditor (AmbiCreatorAud
     tooltipWindow.setLookAndFeel (&globalLaF);
     tooltipWindow.setMillisecondsBeforeTipAppears(500);
     
-    arrayImage = ImageCache::getFromMemory (arrayPng, arrayPngSize);
+    arrayImage = juce::ImageCache::getFromMemory(BinaryData::Background4CH_png, BinaryData::Background4CH_pngSize);
     aaLogoBgPath.loadPathFromData (aaLogoData, sizeof (aaLogoData));
     
     // add labels
@@ -88,7 +88,7 @@ void AmbiCreatorAudioProcessorEditor::paint (Graphics& g)
     
     g.fillAll (globalLaF.ClBackground);
     // g.drawImage(arrayImage, arrayImageArea, RectanglePlacement::centred);
-    g.drawImage(arrayImage, -40, 0, arrayImageArea.getWidth() + 100, currHeight + 40, 0, 0, arrayImage.getWidth(), arrayImage.getHeight());
+    g.drawImage(arrayImage, 0, 0, arrayImage.getWidth(), arrayImage.getHeight(), 0, 0, arrayImage.getWidth()*2, arrayImage.getHeight()*2);
     
     // background logo
     aaLogoBgPath.applyTransform (aaLogoBgPath.getTransformToScaleToFit (0.4f * currWidth, 0.25f * currHeight,
@@ -114,7 +114,7 @@ void AmbiCreatorAudioProcessorEditor::resized()
     const float linearSliderHeight = 0.08f * currentHeight;
     const float labelHeight = 0.03f * currentHeight;
     const float meterWidth = 0.023f * currentWidth;
-    const float meterHeight = 0.32f * currentHeight;
+    const float meterHeight = 0.15f * currentHeight;
     const float meterSpacing = 0.003f * currentWidth;
     const float meterToSliderSpacing = 0.046f * currentWidth;
     const float arrayWidth = 0.308f * currentWidth;

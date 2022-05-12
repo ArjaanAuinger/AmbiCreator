@@ -52,9 +52,7 @@
 #include "TitleBarPaths.h"
 #include "ImgPaths.h"
 
-#ifdef JUCE_OSC_H_INCLUDED
-#include "OSCStatus.h"
-#endif
+
 
 class  AlertSymbol :  public Component, public SettableTooltipClient
 {
@@ -643,30 +641,4 @@ private:
     
 };
 
-#ifdef JUCE_OSC_H_INCLUDED
-class  OSCFooter :  public Component
-{
-public:
-    OSCFooter (OSCReceiverPlus& oscReceiver) : oscStatus (oscReceiver)
-    {
-        addAndMakeVisible (footer);
-        addAndMakeVisible (oscStatus);
-    };
-    ~OSCFooter() {};
 
-    void resized () override
-    {
-        auto bounds = getLocalBounds();
-        footer.setBounds (bounds);
-
-        bounds.removeFromBottom (2);
-        bounds = bounds.removeFromBottom (16);
-        bounds.removeFromLeft (50);
-        oscStatus.setBounds (bounds.removeFromLeft (80));
-    }
-
-private:
-    OSCStatus oscStatus;
-    Footer footer;
-};
-#endif

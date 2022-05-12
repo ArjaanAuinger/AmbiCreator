@@ -3,14 +3,23 @@
 <JUCERPROJECT id="Js3s6V" name="AmbiCreator" projectType="audioplug" version="0.1.0"
               companyName="Austrian Audio" companyCopyright="Austrian Audio"
               companyWebsite="www.austrian.audio" companyEmail="sayhello@austrianaudio.com"
-              reportAppUsage="0" bundleIdentifier="at.aa.ambicreator" pluginFormats="buildAAX,buildAU,buildVST3"
-              pluginCharacteristicsValue="pluginAAXDisableMultiMono" pluginManufacturerCode="-AA-"
-              pluginCode="AAAC" pluginVST3Category="Spatial" pluginAAXCategory="512"
-              pluginAUMainType="'aufx'" aaxIdentifier="at.aa.ambicreator" pluginName="AmbiCreator"
-              pluginDesc="AmbiCreator" pluginManufacturer="Austrian Audio"
+              reportAppUsage="0" bundleIdentifier="at.aa.ambicreator" pluginCharacteristicsValue="pluginAAXDisableMultiMono"
+              pluginManufacturerCode="-AA-" pluginCode="AAAC" pluginVST3Category="Spatial"
+              pluginAAXCategory="512" pluginAUMainType="'aufx'" aaxIdentifier="at.aa.ambicreator"
+              pluginName="AmbiCreator" pluginDesc="AmbiCreator" pluginManufacturer="Austrian Audio"
               pluginRTASCategory="512" pluginVSTCategory="kPlugCategEffect"
-              jucerFormatVersion="1">
+              jucerFormatVersion="1" pluginFormats="buildVST3">
   <MAINGROUP id="LLStlP" name="AmbiCreator">
+    <GROUP id="{73DD4514-3B9A-B137-7D99-5CF2C37E2A7C}" name="images">
+      <FILE id="tlFH3q" name="Background2CH.png" compile="0" resource="1"
+            file="resources/images/Background2CH.png"/>
+      <FILE id="cObCKw" name="Background4CH.png" compile="0" resource="1"
+            file="resources/images/Background4CH.png"/>
+      <FILE id="mGZXNY" name="Knob3D.png" compile="0" resource="1" file="resources/images/Knob3D.png"/>
+      <FILE id="Q156fe" name="LinearSliderKnob.png" compile="0" resource="1"
+            file="resources/images/LinearSliderKnob.png"/>
+      <FILE id="JDvEw9" name="Metering.png" compile="0" resource="1" file="resources/images/Metering.png"/>
+    </GROUP>
     <GROUP id="{E0985C42-F2D7-AE83-3158-6E7E144CB981}" name="resources">
       <GROUP id="{757F4BFD-1D8A-3EB7-0EAA-66E76F0AFCD5}" name="customComponents">
         <FILE id="Q3gNZn" name="ImgPaths.h" compile="0" resource="0" file="resources/customComponents/ImgPaths.h"/>
@@ -61,11 +70,17 @@
         <MODULEPATH id="juce_gui_extra" path="../../Documents/JUCE-master/modules"/>
         <MODULEPATH id="juce_opengl" path="../../Documents/JUCE-master/modules"/>
         <MODULEPATH id="juce_dsp" path="../../Documents/JUCE-master/modules"/>
+        <MODULEPATH id="juce_analytics" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
+        <MODULEPATH id="juce_blocks_basics" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
+        <MODULEPATH id="juce_box2d" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
+        <MODULEPATH id="juce_product_unlocking" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <VS2017 targetFolder="Builds/VisualStudio2017">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" useRuntimeLibDLL="0"/>
+        <CONFIGURATION isDebug="1" name="Debug" useRuntimeLibDLL="0" enablePluginBinaryCopyStep="1"
+                       vst3BinaryLocation="C:\Program Files\Steinberg\VSTPlugins"/>
         <CONFIGURATION isDebug="0" name="Release" useRuntimeLibDLL="0"/>
         <CONFIGURATION isDebug="0" name="Release x32" winArchitecture="Win32" useRuntimeLibDLL="0"/>
       </CONFIGURATIONS>
@@ -85,10 +100,16 @@
         <MODULEPATH id="juce_gui_extra" path="../../Documents/JUCE-master/modules"/>
         <MODULEPATH id="juce_opengl" path="../../Documents/JUCE-master/modules"/>
         <MODULEPATH id="juce_dsp" path="../../Documents/JUCE-master/modules"/>
+        <MODULEPATH id="juce_analytics" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
+        <MODULEPATH id="juce_blocks_basics" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
+        <MODULEPATH id="juce_box2d" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
+        <MODULEPATH id="juce_product_unlocking" path="../../../../../Program Files (x86)/juce-6.0.5-windows/JUCE/modules"/>
       </MODULEPATHS>
     </VS2017>
   </EXPORTFORMATS>
   <MODULES>
+    <MODULE id="juce_analytics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
@@ -96,6 +117,8 @@
             useGlobalPath="1"/>
     <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_blocks_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_box2d" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
@@ -105,6 +128,9 @@
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_product_unlocking" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>
     <OSX/>
